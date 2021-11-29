@@ -26,18 +26,18 @@ body {
   pointer-events: none;
 }
 
-#container.details .list-view li {
+#container.details .list-view .person-name {
   -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
   transition: opacity 0.2s, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.2s;
   transition: transform 0.3s, opacity 0.2s, -webkit-transform 0.3s;
 }
 
-#container.details .list-view li:not(.active) {
+#container.details .list-view .person-name:not(.active) {
   opacity: 0;
 }
 
-#container.details .list-view li.active {
+#container.details .list-view .person-name.active {
   -webkit-transform: translate3d(40px, 0px, 0);
           transform: translate3d(40px, 0px, 0);
   border-color: rgba(255, 255, 255, 0);
@@ -47,7 +47,7 @@ body {
   transition: transform 0.3s, opacity 0.2s, border-color 0.2s, -webkit-transform 0.3s;
 }
 
-#container.details .list-view li.active:hover {
+#container.details .list-view .person-name.active:hover {
   background: none;
 }
 
@@ -101,7 +101,7 @@ body {
   transition: background 0.3s 0.1s;
 }
 
-#container .list-view ul li {
+#container .list-view ul .person-name {
   position: absolute;
   left: 0;
   right: 0;
@@ -113,7 +113,7 @@ body {
   transition: transform 0.3s, opacity 0.3s 0.3s, border-color 0.3s 0.3s, -webkit-transform 0.3s;
 }
 
-#container .list-view ul li strong {
+#container .list-view ul .person-name strong {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
 }
@@ -168,12 +168,23 @@ body {
           transform: translate3d(0, 630px, 0);
 }
 
-#container .list-view ul li:hover {
+#container .list-view ul li:nth-child(11) {
+  -webkit-transform: translate3d(0, 700px, 0);
+          transform: translate3d(0, 700px, 0);
+}
+
+#container .list-view ul li:nth-child(12) {
+  -webkit-transform: translate3d(0, 770px, 0);
+          transform: translate3d(0, 770px, 0);
+}
+
+#container .list-view ul .person-name:hover {
   background: #efefef;
   cursor: pointer;
 }
 
-#container .list-view ul li:before {
+/* #container .list-view ul .person-name:before { */
+.person-name:before {
   content: '';
   display: inline-block;
   vertical-align: middle;
@@ -193,6 +204,10 @@ body {
   bottom: 0;
   z-index: 0;
   background: #FFFFFF;
+}
+
+#container .details-view.opened {
+  z-index: 1;
 }
 
 #container .details-view .background {
@@ -223,6 +238,11 @@ body {
   transition: transform 0.15s;
   transition: transform 0.15s, -webkit-transform 0.15s;
   z-index: 1;
+}
+
+#container .details-view .back.shown {
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 #container .details-view ul {
@@ -283,4 +303,8 @@ li.people-title {
   margin-left: 8px;
   font-weight: bold;
   font-size: larger;
+}
+
+.chosen-person-name {
+  margin-left: 100px;
 }
